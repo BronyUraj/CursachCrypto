@@ -1,16 +1,16 @@
-import DESStatic
+import Static
 
 
 def textToCode(text):
-    return ''.join(bin(DESStatic.__alphabetASCII[char])[2:] for char in text)
+    return ''.join(bin(Static.__alphabetASCII[char])[2:] for char in text)
 
 
 def initialPermutation(binstring):
-    return ''.join(binstring[i] for i in DESStatic.__ip)
+    return ''.join(binstring[i] for i in Static.__ip)
 
 
 def expansion(binstring):
-    return ''.join(binstring[i] for i in DESStatic.__expansion_table)
+    return ''.join(binstring[i] for i in Static.__expansion_table)
 
 
 def keyRounder(binkey):
@@ -25,22 +25,19 @@ def bitXor(bin1, bin2, padding):
 
 
 def sbox(binstring):
-    binblocks = []
-    result = ""
-    for i in range(0, len(binstring), 6):
-        binblocks.append(binstring[i:i + 6])
     for blocknum in range(0, 8):
-        sboxres = DESStatic.__sbox[blocknum][int(binblocks[blocknum][0] + binblocks[blocknum][-1], 2) * 16 + int(
+        sboxres = Static.__sbox[blocknum][int(binblocks[blocknum][0] + binblocks[blocknum][-1], 2) * 16 + int(
             binblocks[blocknum][1:5], 2)]
         result += bin(sboxres)[2:].zfill(4)
     return result
 
 
 def P_Permutation(binstring):
-    return ''.join(binstring[i] for i in DESStatic.__p)
+    return ''.join(binstring[i] for i in Static.__p)
+
 
 def final_Permutation(binstring):
-    return ''.join(binstring[i] for i in DESStatic.__fp)
+    return ''.join(binstring[i] for i in Static.__fp)
 
 
 if __name__ == "__main__":
