@@ -1,6 +1,7 @@
 __alphabet = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя"
 __alphabetASCII = {x: y for x, y in zip(__alphabet, range(192, 256))}
 __alphabetASCII[" "] = 16
+__alphabetRus = {x: y for x, y in zip("АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ", range(1, 34))}
 # initial permutation IP
 __ip = [57, 49, 41, 33, 25, 17, 9, 1,
         59, 51, 43, 35, 27, 19, 11, 3,
