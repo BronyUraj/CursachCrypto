@@ -25,6 +25,10 @@ def bitXor(bin1, bin2, padding):
 
 
 def sbox(binstring):
+    binblocks = []
+    result = ""
+    for i in range(0, len(binstring), 6):
+        binblocks.append(binstring[i:i + 6])
     for blocknum in range(0, 8):
         sboxres = Static.__sbox[blocknum][int(binblocks[blocknum][0] + binblocks[blocknum][-1], 2) * 16 + int(
             binblocks[blocknum][1:5], 2)]
